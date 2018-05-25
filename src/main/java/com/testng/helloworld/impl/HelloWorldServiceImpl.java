@@ -1,8 +1,11 @@
 package com.testng.helloworld.impl;
 
 import com.testng.dto.HelloWorld;
+import com.testng.helloworld.HelloWorldMapper;
 import com.testng.helloworld.HelloWorldService;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * Description:
@@ -14,8 +17,11 @@ import org.springframework.stereotype.Component;
 @Component("helloWorldService")
 public class HelloWorldServiceImpl implements HelloWorldService {
 
+    @Resource
+    private HelloWorldMapper helloWorldMapper;
+
     @Override
-    public void sayHelloWorld(HelloWorld helloWorld) {
-        System.out.println(helloWorld);
+    public String sayHelloWorld(HelloWorld helloWorld) {
+        return helloWorldMapper.sayHelloWorld(helloWorld);
     }
 }

@@ -14,5 +14,5 @@ public interface HelloWorldService {
      * print helloWorld
      * @param helloWorld helloWorld
      */
-    void sayHelloWorld(HelloWorld helloWorld);
+    String sayHelloWorld(HelloWorld helloWorld);
 }
